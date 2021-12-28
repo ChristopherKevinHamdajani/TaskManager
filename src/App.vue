@@ -41,6 +41,13 @@ export default {
     },
     addTask(task) {
       this.tasks = [...this.tasks, task]
+    },
+    async fetchTasks() {
+      const res = await fetch('http://localhost:3000/tasks')
+
+      // const data = await res.json()
+      const data = await res.json()
+      return data
     }
   },
   created() {
